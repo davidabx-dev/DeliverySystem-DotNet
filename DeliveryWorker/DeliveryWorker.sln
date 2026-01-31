@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryWorker", "DeliveryWorker.csproj", "{B1F91994-58B8-2A5B-F2D3-169F437CB607}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1F91994-58B8-2A5B-F2D3-169F437CB607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F91994-58B8-2A5B-F2D3-169F437CB607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F91994-58B8-2A5B-F2D3-169F437CB607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F91994-58B8-2A5B-F2D3-169F437CB607}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {753ECA15-2A60-4DA8-B7BE-A3492C2EFEA1}
+	EndGlobalSection
+EndGlobal
