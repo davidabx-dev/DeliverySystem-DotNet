@@ -37,6 +37,52 @@ O sistema é dividido em dois microsserviços principais que se comunicam via me
 * [Docker](https://www.docker.com/products/docker-desktop) rodando.
 
 ### 1. Subir o RabbitMQ (Docker)
+
 Execute o comando abaixo para iniciar o servidor de mensageria:
+
 ```bash
 docker run -d --hostname meu-rabbit --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+```
+
+> Acesse o painel de controle em: `http://localhost:15672` (Login: `guest` / Senha: `guest`)
+
+---
+
+### 2. Executar a API (Terminal 1)
+
+```bash
+cd DeliveryAPI
+dotnet run
+```
+
+> A API estará rodando em: `http://localhost:5096` (ou porta similar)
+
+---
+
+### 3. Executar o Worker (Terminal 2)
+
+```bash
+cd DeliveryWorker
+dotnet run
+```
+> O Worker ficará aguardando mensagens: `[*] Aguardando pedidos na cozinha...`
+
+---
+
+## 🧪 Testando o Fluxo
+
+### Envie um pedido via PowerShell ou Postman para a API:
+
+```bash
+Invoke-RestMethod -Uri "http://localhost:5096/api/orders" -Method Post -Body '{"customerName": "Cliente Teste", "totalPrice": 99.90}' -ContentType "application/json"
+```
+**Resultado Esperado:**
+
+1. A API retorna Status: `Enviado para Cozinha`.
+2. O Worker exibe instantaneamente: `[x] PEDIDO RECEBIDO: ... Cliente Teste ...`.
+
+---
+
+### 👨‍💻 Autor
+
+Desenvolvido como parte de um estudo avançado sobre Microsserviços e Mensageria em .NET.
